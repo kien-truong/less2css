@@ -17,4 +17,6 @@ function LessCtrl($scope) {
 			$scope.alert_message = "Less runtime error. Perhap invalid CSS ?";
 		}
 	};
+
+	$('#input_less').autosize();
 }
