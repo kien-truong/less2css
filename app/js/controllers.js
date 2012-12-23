@@ -10,8 +10,10 @@ function LessCtrl($scope) {
 		parser = new less.Parser({});
 		try {
 			parser.parse(input, function (error, root) {
-				$scope.output_css = root.toCSS();
 				$scope.alert_message = error;
+				if(!error) {
+					$scope.output_css = root.toCSS();
+				}
 			});
 		} catch (err) {
 			$scope.alert_message = "Less runtime error. Perhap invalid CSS ?";
